@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js  Hello World示例</title>
+    </head>
+
+    <body>
+        <!--这是我们的View-->
+        <h1 style='color: blue'>Vue.js  Hello World示例</h1>
+        <div id="app">
+            {{ message }}
+            <input type="text" v-model="message"/>
+        </div>
+    </body>
+    <script src="vue.min.js"></script>
+    <script>
+        // 这是我们的Model
+        var exampleData = {
+            message: 'Hello World!'
+        }
+
+        // 创建一个 Vue 实例或 "ViewModel"
+        // 它连接 View 与 Model
+        new Vue({
+            el: '#app',
+            data: exampleData
+        })
+    </script>
+</html>

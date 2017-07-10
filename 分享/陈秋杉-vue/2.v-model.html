@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<div id="app">
+    <span>
+        {{msg}}
+    &lt;!&ndash;{{msg?msg:'NoData'}}&ndash;&gt;
+    &lt;!&ndash;{{msg + 'vue is good'}}&ndash;&gt;
+    &lt;!&ndash;{{ msg.split('').reverse().join('')}}&ndash;&gt;
+    &lt;!&ndash;{{*msg}}&ndash;&gt;
+    </span>
+    &lt;!&ndash;<input  v-model="msg"/>&ndash;&gt;
+    &lt;!&ndash;<input  v-model.lazy="msg"/>&ndash;&gt;
+    &lt;!&ndash;<input v-model.number="msg" type="number"/>&ndash;&gt;
+    &lt;!&ndash;<input v-model.trim="msg"/>&ndash;&gt;
+
+</div>-->
+
+<div class="helloVue" v-html="message"></div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+   /* var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123'
+        }
+    })*/
+
+</script>
+
+
+<!--插入html-->
+<script>
+    var vm = new Vue({
+        el:'.helloVue',
+        data:{
+            message:'<h1>hello Vue！</h1>'
+        }
+    });
+</script>
+
+</body>
+</html>

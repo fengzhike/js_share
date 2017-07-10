@@ -1,0 +1,25 @@
+@index-prefix-cls: createArticle;
+.@{index-prefix-cls}{
+	display:flex;
+	flex:2;
+	.edit{
+		flex:1;
+		padding-right: 10px;
+		p{
+			display: flex;
+			input{
+				// width: 300px;
+			}
+			margin-bottom: 10px;
+			span{
+				display: block;
+				width: 60px;
+			}
+		}
+	}
+	.view{
+		flex:1;
+		border:1px solid #dadada;
+		padding:10px;
+	}
+}

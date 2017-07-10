@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div v-bind:class="className">
+        姓名：{{name}}，年龄{{age}}
+    </div>
+
+    <div :style="{color:actColor,fontSize:actSize,backgroundColor:actBackColor}">
+        我是一个box
+    </div>
+
+    <!--<img src="./images/lifecycle.png" alt=""/>-->
+    <img :src="url" />
+</div>
+
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        // 选择目标元素
+        el:'#app',
+        // 提供初始数据
+        data:{
+            name:'cqs',
+            age:18,
+            /*isText:false,
+            isImage:false,*/
+            className:{
+                isText:true,
+                isImage:true
+            },
+
+            actColor:'blue',
+            actSize: '30px',
+            actBackColor:'red',
+
+            url:'./images/lifecycle.png'
+        }
+    })
+
+
+</script>
+</body>
+</html>

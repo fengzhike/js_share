@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <!--<button @click="addFruit">点我啊</button>-->
+    <button v-on:click="addFruit">点我啊</button>
+    <ul>
+        <li v-for="item in items">{{item}}</li>
+    </ul>
+</div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            items:['苹果','香蕉','橘子','苹果']
+        },
+        methods:{
+            addFruit:function(){
+                this.items.push('香蕉')
+            }
+        }
+    })
+</script>
+</body>
+</html>

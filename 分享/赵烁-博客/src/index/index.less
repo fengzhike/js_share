@@ -1,0 +1,31 @@
+@index-prefix-cls: index;
+.@{index-prefix-cls}{
+	display: flex;
+	height: 100%;
+	.adminImg{
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		align-items: center;
+		padding:50px 0;
+		p{
+			color: #fff;
+			line-height: 24px;
+		}
+		img{
+			width: 100px;
+			border-radius: 50%;
+			border: 5px solid #fff;
+		}
+	}
+	.contentHeader{
+		height: 35px;
+		padding-left: 30px;
+		position: relative;
+		.adminBtn{
+			position: absolute;
+			top: 3px;
+			right: 10px;
+		}
+	}
+}

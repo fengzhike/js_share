@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <!--<div v-if="hello">Hello</div>
+    <div v-else-if="word">Word</div>
+    <div v-else="vue">Vue</div>-->
+    <!--v-else 元素必须紧跟在 v-if 元素或者 v-else-if的后面——否则它不能被识别。-->
+<!--
+    <div v-show="react">Reac</div>
+-->
+    <!-- v-show作用与v-if类似，不同的是v-show的元素会始终渲染并保持在 DOM 中,且v-show不支持<template>标签。-->
+
+    <!--<div v-if="yes">yes</div>
+    <div v-if="no">no</div>
+    <div v-if="name.indexOf('Ann')>=0">name:{{name}}</div>
+    <div v-if="age>=10">age:{{age}}</div>
+    <div v-if="sex==0">sex:'女'</div>-->
+
+
+    <template v-if="ok">
+        <h1>Title</h1>
+        <p>text 1</p>
+        <p>text 2</p>
+    </template>
+</div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+
+    //v-if是条件渲染指令，它根据表达式的真假来删除和插入元素
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            hello: false,
+            word: false,
+            vue: true,
+            react: true,
+            ok: true
+        }
+    })
+
+    /*var vm = new Vue({
+        el:'#app',
+        data:{
+            yes:true,
+            no:true,
+            name:'cqsAnn',
+            age:16,
+            sex:0
+        }
+    })*/
+
+
+    /*var vm = new Vue({
+        el:'#app',
+        data:{
+            ok: true
+        }
+    })*/
+</script>
+</body>
+</html>

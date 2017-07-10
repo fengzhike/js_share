@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" id="app">
+    <table class="table table-bordered">
+        <caption>商品清单</caption>
+        <th>序号</th>
+        <th>商品名</th>
+        <th>商品价格</th>
+        <th>操作</th>
+        <tr v-for="(product,key) in products">
+            <td>{{key+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><button type="button" class="btn btn-danger" @click="remove(product)">删除</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button class="btn btn-danger pull-right" @click="removeAll">全部删除</button></td>
+        </tr>
+    </table>
+    <form>
+        <div class="form-group">
+            <label for="name" class="control-label">商品的名称</label>
+            <input type="text" id="name" class="form-control" autocomplete="off" v-model="name"/>
+        </div>
+        <div class="form-group">
+            <label for="price" class="control-label">商品的价格</label>
+            <input type="text" id="price" class="form-control" v-model="price" />
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-success" @click="add">添加</button>
+            <button type="reset" class="btn btn-warning">重置</button>
+        </div>
+    </form>
+</div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            products:[{name:'iphone1',price:20},{name:'iphone2',price:30}],
+            name:'',
+            price:''
+        },
+        methods:{
+            remove:function(p){
+                debugger
+                this.products = this.products.filter(function(item){
+                    debugger
+                    return item != p;
+                })
+            },
+            removeAll:function(){
+                this.products=[]
+            },
+            add:function(){
+                this.products.push({name:this.name,price:this.price});
+                this.name = '';
+                this.price ='';
+            }
+        }
+    })
+</script>
+</body>
+</html>

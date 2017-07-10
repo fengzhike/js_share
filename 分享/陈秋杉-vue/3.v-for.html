@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<ul id="app">
+    <!--<li v-for="item of items">{{item}}</li>-->
+
+    <!--v-for 块中，我们拥有对父作用域属性的完全访问权限。 v-for item 还支持一个可选的第二个参数为当前项的索引。-->
+    <!--<li v-for="(item,index) in items">{{item}}{{index}}</li>-->
+
+    <!--对象-->
+    <!--<li v-for="value in object">{{value}}</li>-->
+    <!--可以提供第二个的参数为键名-->
+    <!--<li v-for="(value,key) in object">{{key}}：{{value}}</li>-->
+    <!--可以提供第三个的参数为索引-->
+    <li v-for="(value,key,index) in object">{{index}}.{{key}}：{{value}}</li>
+</ul>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+   /*var vm = new Vue({
+      el:"#app",
+       data:{
+           items:['苹果','香蕉','橘子','苹果']
+       }
+   })*/
+
+    //可以用 v-for 通过一个对象的属性来迭代。
+   var  vm = new Vue({
+       el: '#app',
+       data: {
+           object: {
+               name: 'John',
+               age: '20',
+               sex: '男'
+           }
+       }
+   })
+
+</script>
+</body>
+</html>
